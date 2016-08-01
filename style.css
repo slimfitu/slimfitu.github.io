@@ -1,0 +1,418 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic);
+
+body {font-family: 'Source Sans Pro', sans-serif; font-size: 14px; color: #666;}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+
+.popupContainer{
+	position:absolute;
+	width:330px;
+	height: auto;
+	left:65%;
+	top:20px;
+	background: #FFF;
+	margin:-100px auto;
+	display:block;
+}
+
+#modal_trigger {margin:100px auto; width:100px; display:block;}
+
+.btn {padding:10px 20px; background: #F4F4F2;}
+.btn_red {background: #ED6347; color: #FFF;}
+
+.btn:hover {background: #E4E4E2;}
+.btn_red:hover {background: #C12B05;}
+
+a.btn {color:#666; text-align: center; text-decoration: none;}
+a.btn_red {color: #FFF;}
+
+.one_half {width:50%; display: block; float:left;}
+.one_half.last {width:45%; margin-left:5%;}
+
+/* Popup Styles*/
+.popupHeader {font-size:16px; text-transform: uppercase;}
+.popupHeader {background:#F4F4F2; position:relative; padding:10px 20px; border-bottom:1px solid #DDD; font-weight:bold;}
+.popupHeader .modal_close {position: absolute; right: 0; top:0; padding:10px 15px; background:#E4E4E2; cursor: pointer; color:#aaa; font-size:16px;}
+
+.popupBody {padding:20px;}
+
+
+/* Social Login Form */
+.social_login {}
+.social_login .social_box {display:block; clear:both; padding:10px; margin-bottom: 10px; background: #F4F4F2; overflow: hidden;}
+.social_login .icon {display:block; width:10px; padding:5px 10px; margin-right: 10px; float:left; color:#FFF; font-size:16px; text-align: center;} 
+.social_login .fb .icon {background:#3B5998;}
+.social_login .google .icon {background:#DD4B39;}
+.social_login .icon_title {display:block; padding:5px 0; float:left; font-weight: bold; font-size: 16px; color:#777;}
+.social_login .social_box:hover {background: #E4E4E2;}
+
+.centeredText {text-align: center; margin: 20px 0; clear: both; overflow: hidden; text-transform: uppercase;}
+
+.action_btns {clear:both; overflow: hidden;}
+.action_btns a {display: block;}
+
+/* User Login Form */
+.user_login {display: none;}
+.user_login label {display: block; margin-bottom:5px;}
+.user_login input[type="text"], .user_login input[type="email"], .user_login input[type="password"] {display: block; width:90%; padding: 10px; border:1px solid #DDD; color:#666;}
+.user_login input[type="checkbox"] {float:left; margin-right:5px;}
+.user_login input[type="checkbox"]+label {float:left;}
+
+.user_login .checkbox {margin-bottom: 10px; clear: both; overflow: hidden;}
+.forgot_password {display:block; margin: 20px 0 10px; clear: both; overflow: hidden; text-decoration: none; color:#ED6347;}
+
+/* User Register Form */
+.user_register {display: none;}
+.user_register label {display: block; margin-bottom:5px;}
+.user_register input[type="text"], .user_register input[type="email"], .user_register input[type="password"] {display: block; width:90%; padding: 10px; border:1px solid #DDD; color:#666;}
+.user_register input[type="checkbox"] {float:left; margin-right:5px;}
+.user_register input[type="checkbox"]+label {float:left;}
+
+.user_register .checkbox {margin-bottom: 10px; clear: both; overflow: hidden;}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #eaf2e3;
+	margin: 0 auto;
+	}
+
+h1 {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 26.4px;
+    }
+.content {
+  width: 80%;
+  height: 100%;
+  float: left;
+  background-color:#eaf2e3
+}
+
+.sidebar{
+  width: 20%;
+  height: 100%;
+  float: left;
+  padding-bottom: 70px;
+  background-color: #595959;
+  
+}
+
+.sidebar ul{
+    margin: 0;
+    overflow: hidden;
+    padding: 0px;
+    list-style-type: none;
+    width: 100%;
+    background-color: #595959;
+  
+}
+
+.sidebar li a{
+    width: 100%;
+    padding-top: 20%;
+    display: block;
+    padding: 10px 5px;
+    background-color: #595959;
+    color: #eaf2e3;
+    text-decoration: none;
+    text-align: center;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 26.4px;
+}
+
+.sidebar form{
+    width: 100%;
+    padding-top: 20%;
+    display: block;
+    padding: 10px 0px;
+    background-color: #595959;
+    color: #eaf2e3;
+    text-decoration: none;
+    text-align: center;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 26.4px;
+}
+
+#header {
+    position: relative;
+    top: -10px;
+    background-color: #3c4543;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.sidebar li a:hover {
+    background-color: #61d85d;
+    color: white;
+}
+
+
+
+
+.ribbon {
+ font-size: 16px !important;
+ /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+
+ width: 50%;
+    
+ position: relative;
+ position: absolute;
+ background: #61d85d;
+ color: #fff;
+ text-align: center;
+ padding: 1em 2em; /* Adjust to suit */
+ margin: 2em auto 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+ 
+ margin:-630px auto;
+ display:block;
+ left:430px;
+}
+.ribbon:before, .ribbon:after {
+ content: "";
+ position: absolute;
+ display: block;
+ bottom: -1em;
+ border: 1.5em solid #44C63D;
+ z-index: -1;
+}
+.ribbon:before {
+ left: -2em;
+ border-right-width: 1.5em;
+ border-left-color: transparent;
+}
+.ribbon:after {
+ right: -2em;
+ border-left-width: 1.5em;
+ border-right-color: transparent;
+}
+.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+ content: "";
+ position: absolute;
+ display: block;
+ border-style: solid;
+ border-color: #21B519 transparent transparent transparent;
+ bottom: -1em;
+}
+.ribbon .ribbon-content:before {
+ left: 0;
+ border-width: 1em 0 0 1em;
+}
+.ribbon .ribbon-content:after {
+ right: 0;
+ border-width: 1em 1em 0 0;
+}
+
+/** tays code**/
+
+.aboutus{
+	position: absolute;
+	height: 180px;
+	width: 1000px;
+	margin: 20px 50px 10px 10px;
+	padding: 2px;
+	border: 4px double;
+	border-color: #ffffff;
+	background-color: #d35d63;
+	float: left;
+	margin:-500px auto;
+	display:block;
+	left:280px;
+}
+
+.aboutushead{
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+	color: #eaf2e3;
+	text-align: center;
+	text-decoration: underline;	
+}
+.text{
+	font-family: Verdana, Geneva, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+	color: #eaf2e3;
+}
+
+.ourgoal{
+	position:absolute;
+	height: 180px;
+	width: 1000px;
+	margin: 20px 50px 10px 10px;
+	padding: 2px;
+	border: 4px double;
+	border-color: #ffffff;
+	background-color: #d35d63;
+	float: left;
+	margin:-250px auto;
+	display:block;
+	left:280px;
+}
+
+hr.style18 { 
+  height: 30px;
+  position:absolute;
+  border-style: solid; 
+  border-color: #8c8b8b; 
+  border-width: 1px 0 0 0; 
+  border-radius: 20px;
+  margin:-500px auto;
+  display:block;
+  left:280px;
+} 
+hr.style18:before { 
+  display: block; 
+  content: ""; 
+  height: 30px; 
+  margin-top: -31px; 
+  border-style: solid; 
+  border-color: #8c8b8b; 
+  border-width: 0 0 1px 0; 
+  border-radius: 20px; 
+}
+
+.endurance{
+	position: absolute;
+	height: 200px;
+	width: 300px;
+	margin: 20px 50px 10px 10px;
+	padding: 2px;
+	border: 4px double;
+	border-color: #ffffff;
+	background-color: #d35d63;
+	float: left;
+	margin:-500px auto;
+	display:block;
+	left:395px;
+}
+
+.endtext{
+	font-family: Verdana, Geneva, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	font-size: 40px;
+	line-height: 26.4px;
+	color: #eaf2e3;
+	text-align: center;
+	padding-top: 45px;
+	text-decoration: underline;
+}
+
+.strength{
+	position: absolute;
+	height: 200px;
+	width: 300px;
+	margin: 20px 50px 10px 10px;
+	padding: 2px;
+	border: 4px double;
+	border-color: #ffffff;
+	background-color: #d35d63;
+	float: left;
+	margin:-250px auto;
+	display:block;
+	left:395px;
+}
+
+.strengthhead{
+	font-family: Verdana, Geneva, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	font-size: 40px;
+	line-height: 26.4px;
+	color: #eaf2e3;
+	text-align: center;
+	padding-top: 45px;
+	text-decoration: underline;
+}
+
+.balance{
+	position: absolute;
+	height: 200px;
+	width: 300px;
+	margin: 20px 50px 10px 10px;
+	padding: 2px;
+	border: 4px double;
+	border-color: #ffffff;
+	background-color: #d35d63;
+	float: left;
+	margin:-250px auto;
+	display:block;
+	left:892px;
+}
+
+.balancehead{
+	font-family: Verdana, Geneva, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	font-size: 40px;
+	line-height: 26.4px;
+	color: #eaf2e3;
+	text-align: center;
+	padding-top: 45px;
+	text-decoration: underline;
+}
+
+.flex{
+	position: absolute;
+	height: 200px;
+	width: 300px;
+	margin: 20px 50px 10px 10px;
+	padding: 2px;
+	border: 4px double;
+	border-color: #ffffff;
+	background-color: #d35d63;
+	float: left;
+	margin:-536px auto;
+	display:block;
+	left:892px;
+}
+
+.flexhead{
+	font-family: Verdana, Geneva, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	font-size: 40px;
+	line-height: 26.4px;
+	color: #eaf2e3;
+	text-align: center;
+	padding-top: 45px;
+	text-decoration: underline;
+}
