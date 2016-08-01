@@ -37,6 +37,7 @@
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+   $("#lean_overlay").trigger("click")
 </script>
 			<ul>
 				<li><img src="hello.png" alt="logo" height="220" width="275">
@@ -102,18 +103,18 @@
 				<!-- Register Form -->
 				<div class="user_register">
 					<form>
-						<label>Full Name</label>
+						<label>Full Name*</label>
 						<input type="text" />
 						<br />
 
-						<label>Email Address</label>
+						<label>Email Address*</label>
 						<input type="email" />
 						<br />
 
-						<label>Password</label>
+						<label>Password*</label>
 						<input type="password" />
 						<br />
-
+						*Required field
 						<div class="checkbox">
 							<input id="send_updates" type="checkbox" />
 							<label for="send_updates">Send me occasional email updates</label>
