@@ -10,6 +10,94 @@
 	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
 	<title> Welcome! </title>
+	
+	<script>
+// If statement...?
+if (window.openDatabase) {
+//Create the database the parameters are 
+//1. the database name 
+//2.version number
+//	3. a description 
+//4. the size of the database (in bytes) 1024 x 1024 = 1MB
+    var mydb = openDatabase("BMI_db", "0.1", "A Database of BMI", 1024 * 1024);
+    //create the cars table using SQL for the database using a transaction MUST BE IN A TRANSACTION
+    mydb.transaction(function(t) {
+        t.executeSql("CREATE TABLE IF NOT EXISTS BMI (id INTEGER PRIMARY KEY ASC, weight INTEGER, feet INTEGER, inches INTEGER ,age INTEGER, gender TEXT)"); //creates table 
+    });
+} else {
+    alert("WebSQL is not supported by your browser!"); //will run this is webSQL is not supported by browser
+}
+
+
+//function to output the list of cars in the database
+/*function updateCarList(transaction, results) {
+    //initialise the listitems variable
+    var listitems = "";
+    //get the car list holder ul
+    var listholder = document.getElementById("carlist");
+    //clear cars list ul
+    listholder.innerHTML = "";
+    var i;
+    //Iterate through the results
+    for (i = 0; i < results.rows.length; i++) {
+        //Get the current row
+        var row = results.rows.item(i);
+        listholder.innerHTML += "<li>" + row.make + " - " + row.model + " (<a href='javascript:void(0);' onclick='deleteCar(" + row.id + ");'>Delete Car</a>)";
+    }
+}
+//function to get the list of cars from the database
+function outputCars() {
+    //check to ensure the mydb object has been created
+    if (mydb) {
+        //Get all the cars from the database with a select statement, set outputCarList as the callback function for the executeSql command
+        mydb.transaction(function(t) {
+            t.executeSql("SELECT * FROM cars", [], updateCarList);
+        });
+    } else {
+        alert("db not found, your browser does not support web sql!");
+    }
+} */
+
+//function to add the car to the database
+function addData() {
+    //check to ensure the mydb object has been created
+    if (mydb) {
+        //get the values of the make and model text inputs
+		//weight, height, age
+		var weight = document.getElementById("weight").value; //gets the VALUE the user input and calls it "weight"
+        var feet = document.getElementById("feet").value; //gets the VALUE the user input and calls it "feet"
+		var inches= document.getElementById("inches").value; //gets the VALUE the user input and calls it "inches"
+		var age = document.getElementById("age").value;//gets the VALUE the user input and calls it "age"
+        //Test to ensure that the user has entered weight, feet, inches and age
+        if (weight !== "" && feet !== "" && inches !== "" && age !=="") {
+            //Insert the user entered details into the BMI table, note the use of the ? placeholder, these will replaced by the data passed in as an array as the second parameter
+            mydb.transaction(function(t) {
+                t.executeSql("INSERT INTO BMI (weight, feet, inches, age) VALUES (?, ?, ?, ?)", [weight, feet, inches, age]);
+                //outputBMI();
+				//window.open("http://www.w3schools.com");
+            });
+        } else {
+            alert("You must enter your weight, feet, inches and your age!");
+        }
+    } else {
+        alert("db not found, your browser does not support web sql!");
+    }
+}
+//function to remove a car from the database, passed the row id as it's only parameter
+/*function deleteCar(id) {
+    //check to ensure the mydb object has been created
+    if (mydb) {
+        //Get all the cars from the database with a select statement, set outputCarList as the callback function for the executeSql command
+        mydb.transaction(function(t) {
+            t.executeSql("DELETE FROM cars WHERE id=?", [id], outputCars);
+        });
+    } else {
+        alert("db not found, your browser does not support web sql!");
+    }
+}
+
+outputCars(); */
+</script>
 	</head>
 	<div class="sidebar">
 		<body>
@@ -132,6 +220,15 @@
 <h1 class="ribbon">
 <strong class="ribbon-content">WORKOUTS</strong>
 </h1>
+
+<div id="controls">
+    <p>Add your information to the database</p>
+    <label>Weight: </label><input type="number" id="weight" /><br />
+    <label>Feet: </label><input type="number" id="feet" /><br />
+	<label>Inches: </label><input type="number" id="inches" /><br />
+	<label> Age: </label><input type="number" id="age" /><br />
+    <button type="button" id="addData" onclick="addData();">Add Data</button>
+</div>
 
 <div class="endurance">
 <p class="endtext">ENDURANCE</p>
