@@ -1,15 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+	<link rel="shortcut icon" type="image/x-icon" href="hello2.ico" />
 	<title>SLIMFIT</title>
+	<meta name="google-signin-client_id" content="228795929219-tppcjle32ktn5gu55umd8rbjkae6753a.apps.googleusercontent.com">
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
 	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
-	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
 	<title> Welcome! </title>
 	</head>
 	<div class="sidebar">
 		<body>
+		<div id="fb-root"></div>
+			<script>(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=101914556920862";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>
+			<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '101914556920862',
+      xfbml      : true,
+      version    : 'v2.7'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 			<ul>
 				<li><img src="hello.png" alt="logo" height="220" width="275">
 				<li><a href="index.html">Home</a></li>
@@ -31,16 +59,9 @@
 				<!-- Social Login -->
 				<div class="social_login">
 					<div class="">
-						<a href="#" class="social_box fb">
-							<span class="icon"><i class="fa fa-facebook"></i></span>
-							<span class="icon_title">Connect with Facebook</span>
-							
-						</a>
+						<div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false"></div>
 
-						<a href="#" class="social_box google">
-							<span class="icon"><i class="fa fa-google-plus"></i></span>
-							<span class="icon_title">Connect with Google</span>
-						</a>
+						<div class="g-signin2" data-onsuccess="onSignIn"></div>
 					</div>
 
 					<div class="centeredText">
