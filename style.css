@@ -196,6 +196,10 @@ h1 {
  display:block;
  left:430px;
 }
+
+.ribbon:content {
+	font-size: 50px
+}
 .ribbon:before, .ribbon:after {
  content: "";
  position: absolute;
@@ -416,3 +420,116 @@ hr.style18:before {
 	padding-top: 45px;
 	text-decoration: underline;
 }
+
+.break{
+	position: absolute;
+	height: 200px;
+	width: 300px;
+	margin: 20px 50px 10px 10px;
+	padding: 2px;
+	border: 4px double;
+	border-color: #ffffff;
+	background-color: #d35d63;
+	float: left;
+	margin:-500px auto;
+	display:block;
+	left:395px;
+}
+
+.breaktext{
+	font-family: Verdana, Geneva, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	font-size: 40px;
+	line-height: 26.4px;
+	color: #eaf2e3;
+	text-align: center;
+	padding-top: 45px;
+	text-decoration: underline;
+}
+
+.lunch{
+	position: absolute;
+	height: 200px;
+	width: 300px;
+	margin: 20px 50px 10px 10px;
+	padding: 2px;
+	border: 4px double;
+	border-color: #ffffff;
+	background-color: #d35d63;
+	float: left;
+	margin:-250px auto;
+	display:block;
+	left:395px;
+}
+
+.lunchtext{
+	font-family: Verdana, Geneva, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	font-size: 40px;
+	line-height: 26.4px;
+	color: #eaf2e3;
+	text-align: center;
+	padding-top: 45px;
+	text-decoration: underline;
+}
+
+.din{
+	position: absolute;
+	height: 200px;
+	width: 300px;
+	margin: 20px 50px 10px 10px;
+	padding: 2px;
+	border: 4px double;
+	border-color: #ffffff;
+	background-color: #d35d63;
+	float: left;
+	margin:-250px auto;
+	display:block;
+	left:892px;
+}
+
+.dintext{
+	font-family: Verdana, Geneva, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	font-size: 40px;
+	line-height: 26.4px;
+	color: #eaf2e3;
+	text-align: center;
+	padding-top: 45px;
+	text-decoration: underline;
+}
+
+.snks{
+	position: absolute;
+	height: 200px;
+	width: 300px;
+	margin: 20px 50px 10px 10px;
+	padding: 2px;
+	border: 4px double;
+	border-color: #ffffff;
+	background-color: #d35d63;
+	float: left;
+	margin:-536px auto;
+	display:block;
+	left:892px;
+}
+
+.snkstext{
+	font-family: Verdana, Geneva, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	font-size: 35px;
+	line-height: 26.4px;
+	color: #eaf2e3;
+	text-align: center;
+	padding-top: 45px;
+	text-decoration: underline;
+}
+
