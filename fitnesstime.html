@@ -44,7 +44,7 @@ function calculations(transaction, results) {
 		// do a bunch of calculations in here
 		var height = row.feet * 12 + row.inches;
 		var height_metric = height * .025;
-		var square_height = height * height;
+		var square_height = height_metric * height_metric;
 		var weight = row.weight * .45;
 		var BMI = weight / square_height;
 		
