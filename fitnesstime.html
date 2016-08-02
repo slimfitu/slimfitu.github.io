@@ -41,7 +41,9 @@ function calculations(transaction, results) {
     for (i = 0; i < results.rows.length; i++) { //goes through all your data
         //Get the current row
         var row = results.rows.item(i);
-        listholder.innerHTML += "<li>" + row.feet + " - " + row.weight;
+        	var height = row.feet * 12 + row.inches;
+		
+		listholder.innerHTML += "<li>" + height;
     }
 }
 
