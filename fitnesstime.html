@@ -42,6 +42,10 @@ function calculations(transaction, results) {
         //Get the current row
         var row = results.rows.item(i);
         	var height = row.feet * 12 + row.inches;
+		var height_inches = height * .025;
+		var square_height = height ** 2;
+		var weight = row.weight * .45;
+		var weight_divided = weight / height;
 		
 		listholder.innerHTML += "<li>" + height;
     }
