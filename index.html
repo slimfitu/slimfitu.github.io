@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-	<link rel="shortcut icon" type="image/x-icon" href="hello2.ico" />
+	<link rel="shortcut icon" type="image/x-icon" href="ughicon.ico" />
 	<title>SLIMFIT</title>
 	<meta name="google-signin-client_id" content="228795929219-tppcjle32ktn5gu55umd8rbjkae6753a.apps.googleusercontent.com">
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -37,13 +37,20 @@
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+   $("#lean_overlay").trigger("click")
 </script>
+<style type="text/css">
+       a:link {color: black;}      /* unvisited link */
+       a:visited {color: black;}   /* visited link */
+       a:hover {color: black;}     /* mouse over link */
+       a:active {color: black;}    /* selected link */
+    </style>
 			<ul>
-				<li><img src="hello.png" alt="logo" height="220" width="275">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="recipestime.html">Recipes</a></li>
-				<li><a href="fitnesstime.html">Fitness</a></li>
-				<li><a href="articles.html">Articles</a></li>
+				<li><img src="ugh.png" alt="logo" height="240" width="255">
+				<li><a href="index.html">HOME</a></li>
+				<li><a href="recipestime.html">RECIPES</a></li>
+				<li><a href="fitnesstime.html">FITNESS</a></li>
+				<li><a href="articles.html">ARTICLES</a></li>
 			</ul>
 	<div class="container">
 
@@ -77,17 +84,17 @@
 				<!-- Username & Password Login form -->
 				<div class="user_login">
 					<form>
-						<label>Email</label>
+						<label class= "changetext">Email</label>
 						<input type="text" />
 						<br />
 
-						<label>Password</label>
+						<label class= "changetext">Password</label>
 						<input type="password" />
 						<br />
 
 						<div class="checkbox">
 							<input id="remember" type="checkbox" />
-							<label for="remember">Remember me on this computer</label>
+							<label class="changetext" for="remember">Remember me on this computer</label>
 						</div>
 
 						<div class="action_btns">
@@ -102,21 +109,21 @@
 				<!-- Register Form -->
 				<div class="user_register">
 					<form>
-						<label>Full Name</label>
+						<label class= "changetext">Full Name*</label>
 						<input type="text" />
 						<br />
 
-						<label>Email Address</label>
+						<label class= "changetext">Email Address*</label>
 						<input type="email" />
 						<br />
 
-						<label>Password</label>
+						<label class= "changetext">Password*</label>
 						<input type="password" />
 						<br />
-
+						*Required field
 						<div class="checkbox">
 							<input id="send_updates" type="checkbox" />
-							<label for="send_updates">Send me occasional email updates</label>
+							<label class="changetext" for="send_updates">Send me occasional email updates</label>
 						</div>
 
 						<div class="action_btns">
@@ -134,17 +141,17 @@
 </h1>
 
 <div class="aboutus">
-<p class="aboutushead">About Us</p>
+<p class="aboutushead">ABOUT US</p>
 <p class="text">We are a team of girls from the Girls Who Code Summer Imersion Program(SIP) and we want to make a change in today's society.
 We are focusing on the issue of young adults, mostly college students, that tend to develop unhealthy diets when they leave home.</p>
 </div>
 <div></div>
-
+ 
 <br>
 <hr class="style18">
 
 <div class="ourgoal">
-<p class="aboutushead">Our Goal</p>
+<p class="aboutushead">OUR GOAL</p>
 <p class="text">Our goal here at Slimfit is to bring a healthy change to young adults everywhere. Most college students live on a unhealthy diet their first couple years of school. This consisting of Ramen Noodles, 
 Mac and Cheese cups, etc. Just because they are away doesn't mean they can get away with this unhealthy diet. We want students to be able to stay active and healthy while being a student in college.</p>
 </div>

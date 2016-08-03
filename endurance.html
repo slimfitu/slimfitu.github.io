@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-	<link rel="shortcut icon" type="image/x-icon" href="hello2.ico" />
+	<link rel="shortcut icon" type="image/x-icon" href="ughicon.ico" />
 	<title>SLIMFIT</title>
 	<meta name="google-signin-client_id" content="228795929219-tppcjle32ktn5gu55umd8rbjkae6753a.apps.googleusercontent.com">
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -11,6 +11,104 @@
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
 	<title> Welcome! </title>
 	</head>
+	<script>
+// If statement...?
+if (window.openDatabase) {
+//Create the database the parameters are 
+//1. the database name 
+//2.version number
+//	3. a description 
+//4. the size of the database (in bytes) 1024 x 1024 = 1MB
+    var mydb = openDatabase("BMI_db", "0.1", "A Database of BMI", 1024 * 1024);
+    //create the cars table using SQL for the database using a transaction MUST BE IN A TRANSACTION
+    mydb.transaction(function(t) {
+        t.executeSql("CREATE TABLE IF NOT EXISTS BMI (id INTEGER PRIMARY KEY ASC, weight INTEGER, feet INTEGER, inches INTEGER ,age INTEGER, gender TEXT)"); //creates table 
+    });
+} else {
+    alert("WebSQL is not supported by your browser!"); //will run this is webSQL is not supported by browser
+}
+
+
+//function to output the list of cars in the database
+function calculations(transaction, results) {
+    //initialise the listitems variable
+    var listitems = "";
+    //get the car list holder ul
+    var listholder = document.getElementById("bmilist");
+    //clear cars list ul
+    listholder.innerHTML = "";
+    var i;
+	
+    //Iterate through the results
+    for (i = 0; i < results.rows.length; i++) { //goes through all your data
+        //Get the current row
+        var row = results.rows.item(i);
+		// do a bunch of calculations in here
+		var height = row.feet * 12 + row.inches;
+		var height_metric = height * .025;
+		var square_height = height_metric * height_metric;
+		var weight = row.weight * .45;
+		var BMI = weight / square_height;
+		
+		
+		listholder.innerHTML += "<li>" + BMI;
+		//IF STATEMNT
+    }
+}
+
+//function to get the list of cars from the database
+function calculateBMI() {
+    //check to ensure the mydb object has been created
+    if (mydb) {
+        //Get all the cars from the database with a select statement, set outputCarList as the callback function for the executeSql command
+        mydb.transaction(function(t) {
+            t.executeSql("SELECT * FROM BMI", [], calculations);
+        });
+    } else {
+        alert("db not found, your browser does not support web sql!");
+    }
+} 
+
+//function to add the car to the database
+function addData() {
+    //check to ensure the mydb object has been created
+    if (mydb) {
+        //get the values of the make and model text inputs
+		//weight, height, age
+		var weight = document.getElementById("weight").value; //gets the VALUE the user input and calls it "weight"
+        var feet = document.getElementById("feet").value; //gets the VALUE the user input and calls it "feet"
+		var inches= document.getElementById("inches").value; //gets the VALUE the user input and calls it "inches"
+		var age = document.getElementById("age").value;//gets the VALUE the user input and calls it "age"
+        //Test to ensure that the user has entered weight, feet, inches and age
+        if (weight !== "" && feet !== "" && inches !== "" && age !=="") {
+            //Insert the user entered details into the BMI table, note the use of the ? placeholder, these will replaced by the data passed in as an array as the second parameter
+            mydb.transaction(function(t) {
+                t.executeSql("INSERT INTO BMI (weight, feet, inches, age) VALUES (?, ?, ?, ?)", [weight, feet, inches, age]);
+                calculateBMI();
+				//window.open("http://www.w3schools.com");
+            });
+        } else {
+            alert("You must enter your weight, feet, inches and your age!");
+        }
+    } else {
+        alert("db not found, your browser does not support web sql!");
+    }
+}
+//function to remove a car from the database, passed the row id as it's only parameter
+/*function deleteCar(id) {
+    //check to ensure the mydb object has been created
+    if (mydb) {
+        //Get all the cars from the database with a select statement, set outputCarList as the callback function for the executeSql command
+        mydb.transaction(function(t) {
+            t.executeSql("DELETE FROM cars WHERE id=?", [id], outputCars);
+        });
+    } else {
+        alert("db not found, your browser does not support web sql!");
+    }
+}
+*/
+calculateBMI();
+</script>
 	<div class="sidebar">
 		<body>
 		<div id="fb-root"></div>
@@ -135,34 +233,30 @@
 		</div>
 	</div>
 	
-<h1 class="ribbonR">
-<strong class="ribbon-content">RECIPES</strong>
+<h1 class="ribbonF">
+<strong class="ribbon-content">BMI</strong>
 </h1>
 
-<div class="breakfast">
-<a href="breakfast.html">BREAKFAST</a>
+<div class="bmibox">
+<p class="bmih1">BMI CALCULATOR</p>
+<div id="controls">
+    <p>Add your information to the database</p>
+    <label>Weight: </label><input type="number" id="weight" /><br />
+    <label>Feet: </label><input type="number" id="feet" /><br />
+	<label>Inches: </label><input type="number" id="inches" /><br />
+	<label> Age: </label><input type="number" id="age" /><br />
+    <button type="button" id="addData" onclick="addData();">Add Data</button>
 </div>
-<div></div>
 
-<br>
-<hr class="style18">
-
-<div class="lunch">
-<a href="lunch.html">LUNCH</a>
+<div id="bmilistholder">
+    <h3>Your bmi</h3>
+    <ul id="bmilist">
+    </ul>
+</div>
+<p class="text"></p>
 </div>
 
 
-<div class="dinner">
-<a href="dinner.html">DINNER</a>
-</div>
-<div></div>
-
-<br>
-<hr class="style18">
-
-<div class="snk">
-<a href="snk.html">SNACKS/DRINKS</a>
-</div>
 
 <script type="text/javascript">
 	$("#modal_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
